@@ -27,15 +27,23 @@ test('fill the search field', async ({ page }) => {
   await page.fill("[placeholder='Last Name']" ,"Batkovich"); // fields can be filled in this wayt
   await page.locator("[placeholder='Zip/Postal Code']").fill("71000");
 
+  await page.waitForTimeout(1000);
+
   await page.locator("[data-test='continue']").click();
 
   expect(page.url()).toBe("https://www.saucedemo.com/checkout-step-two.html");
+
+  await page.waitForTimeout(1000);
 
   await page.locator("[data-test='finish']").click();
 
   expect(page.url()).toBe("https://www.saucedemo.com/checkout-complete.html");
 
+  await page.waitForTimeout(1000);
+
   await page.locator("[data-test='back-to-products']").click();
 
   expect(page.url()).toBe("https://www.saucedemo.com/inventory.html");
+
+  await page.waitForTimeout(1000);
 });

@@ -1,6 +1,6 @@
 import { test, expect, chromium } from '@playwright/test';
 
-test('fill the search field', async ({ page }) => {
+test('Purchase path', async ({ page }) => {
   //const browser = await chromium.launch();
   //const context = await browser.newContext();
   //const page = context.newPage();

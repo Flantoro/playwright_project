@@ -15,4 +15,27 @@ test('fill the search field', async ({ page }) => {
   expect(page.url()).toBe("https://www.saucedemo.com/inventory.html");
 
   expect(page.locator("[id='header_container'] span").first()).toHaveText("Products");
+
+  await page.locator("[data-test='add-to-cart-sauce-labs-backpack']").click();
+  await page.locator("[class='shopping_cart_container'] a").click();
+
+  //expect(page.locator("[class='cart_item'] [class='cart_quantity']")).toHaveValue(/[1]/);
+  await page.locator("[name='checkout']").click();
+  expect(page.url()).toBe("https://www.saucedemo.com/checkout-step-one.html");
+
+  await page.locator("[placeholder='First Name']").fill("Flantoro");
+  await page.locator("[placeholder='Last Name']").fill("Batkovich");
+  await page.locator("[placeholder='Zip/Postal Code']").fill("71000");
+
+  await page.locator("[data-test='continue']").click();
+
+  expect(page.url()).toBe("https://www.saucedemo.com/checkout-step-two.html");
+
+  await page.locator("[data-test='finish']").click();
+
+  expect(page.url()).toBe("https://www.saucedemo.com/checkout-complete.html");
+
+  await page.locator("[data-test='back-to-products']").click();
+
+  expect(page.url()).toBe("https://www.saucedemo.com/inventory.html");
 });

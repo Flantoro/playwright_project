@@ -24,7 +24,7 @@ test('fill the search field', async ({ page }) => {
   expect(page.url()).toBe("https://www.saucedemo.com/checkout-step-one.html");
 
   await page.locator("[placeholder='First Name']").fill("Flantoro");
-  await page.locator("[placeholder='Last Name']").fill("Batkovich");
+  await page.fill("[placeholder='Last Name']" ,"Batkovich"); // fields can be filled in this wayt
   await page.locator("[placeholder='Zip/Postal Code']").fill("71000");
 
   await page.locator("[data-test='continue']").click();

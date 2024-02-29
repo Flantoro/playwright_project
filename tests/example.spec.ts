@@ -37,6 +37,4 @@ test('Purchase path', async ({ page }) => {
   await checkout.clickOnTheFinishButton();
 
   await checkout.checkIfOrderCompleted(page);
- //fosdfiofguiodfygiudr
- //ghofgiho
 });

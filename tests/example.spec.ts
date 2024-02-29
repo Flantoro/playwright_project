@@ -38,4 +38,5 @@ test('Purchase path', async ({ page }) => {
 
   await checkout.checkIfOrderCompleted(page);
  //fosdfiofguiodfygiudr
+ //ghofgiho
 });

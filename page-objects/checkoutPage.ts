@@ -36,5 +36,4 @@ export class checkoutPage{
         await expect(page.url()).toBe("https://www.saucedemo.com/checkout-complete.html");
         await expect(this.successfulMessage).toBeVisible();
     }
-
 }

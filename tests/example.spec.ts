@@ -39,7 +39,7 @@ test('Purchase path', async ({ page }) => {
   await checkout.checkIfOrderCompleted(page);
 })
 
-test ('Locked User Login', async ({ page }) => {
+test('Locked User Login', async ({ page }) => {
   const login = new loginPage(page);
   await login.goto();
   await login.lockedUserLogin();

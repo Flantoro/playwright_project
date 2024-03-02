@@ -22,4 +22,10 @@ export class loginPage {
     await this.passwordInputField.fill("secret_sauce");
     await this.loginButton.click();
   }
+
+  async lockedUserLogin(){
+    await this.usernameInputField.fill("locked_out_user");
+    await this.passwordInputField.fill("secret_sauce");
+    await this.loginButton.click();
+  }
 }

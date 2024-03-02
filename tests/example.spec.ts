@@ -37,4 +37,11 @@ test('Purchase path', async ({ page }) => {
   await checkout.clickOnTheFinishButton();
 
   await checkout.checkIfOrderCompleted(page);
+})
+
+test ('Locked User Login', async ({ page }) => {
+  const login = new loginPage(page);
+  await login.goto();
+  await login.lockedUserLogin();
+  expect(page.url()).not.toEqual("https://www.saucedemo.com/inventory.html");
 });
